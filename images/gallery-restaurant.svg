@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Ambiente premium da hamburgueria">
+  <rect width="720" height="520" rx="28" fill="#111"/>
+  <path d="M0 0h720v170H0z" fill="#1a1a1a"/>
+  <circle cx="170" cy="128" r="34" fill="#f5b301" opacity=".55"/>
+  <circle cx="360" cy="128" r="34" fill="#f5b301" opacity=".55"/>
+  <circle cx="550" cy="128" r="34" fill="#f5b301" opacity=".55"/>
+  <path d="M0 170h720v350H0z" fill="#161616"/>
+  <path d="M84 246h552v42H84z" fill="#2a2a2a"/>
+  <path d="M118 288h484v126H118z" fill="#20140c"/>
+  <path d="M160 414h400v34H160z" fill="#0d0d0d"/>
+  <path d="M148 240h424" stroke="#f5b301" stroke-width="6" opacity=".55"/>
+</svg>

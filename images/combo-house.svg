@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Combo com hambúrguer batata e refrigerante">
+  <rect width="720" height="520" rx="34" fill="#171717"/>
+  <circle cx="552" cy="126" r="108" fill="#f5b301" opacity=".11"/>
+  <g filter="drop-shadow(0 22px 24px rgba(0,0,0,.45))">
+    <path d="M92 262h260c22 0 40 18 40 40s-18 40-40 40H92c-22 0-40-18-40-40s18-40 40-40Z" fill="#321208"/>
+    <path d="M77 245c16-66 72-101 150-101 83 0 140 38 153 101H77Z" fill="#d98b2f"/>
+    <path d="M93 342h268c-8 35-38 58-79 58H171c-41 0-70-23-78-58Z" fill="#c97c29"/>
+    <path d="M100 288h270l-33 39H136l-36-39Z" fill="#f5b301"/>
+    <path d="M430 172h148l-24 228h-99l-25-228Z" fill="#b41e16"/>
+    <path d="M420 150h168v34H420z" fill="#f5b301"/>
+    <path d="M470 118h85l-10 34h-65l-10-34Z" fill="#fff" opacity=".9"/>
+    <path d="M499 151l28 151" stroke="#fff" stroke-width="10" opacity=".5"/>
+    <path d="M612 226l-31 175H488l18-175h106Z" fill="#f5b301"/>
+    <path d="M510 206l18-96 21 5-17 91" stroke="#f5b301" stroke-width="13" stroke-linecap="round"/>
+    <path d="M544 218l32-105 21 7-31 99" stroke="#f5b301" stroke-width="13" stroke-linecap="round"/>
+    <path d="M578 227l53-92 19 11-50 88" stroke="#f5b301" stroke-width="13" stroke-linecap="round"/>
+  </g>
+</svg>

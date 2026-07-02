@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BurgerHouse: hamburgueria artesanal premium com lanches, combos, acompanhamentos, bebidas e sobremesas.">
+  <title>Burger House | Hamburgueria Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header" id="topo">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a class="brand" href="#inicio"><span class="brand__mark">BH</span><span class="brand__text">Burger House</span></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="#cardapio">Cardápio</a></li>
+        <li><a class="nav-link" href="#combos">Combos</a></li>
+        <li><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+        <li><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
+        <li><a class="nav-link" href="#localizacao">Localização</a></li>
+      </ul>
+      <a class="btn btn--whatsapp nav-order" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Hamburgueria Artesanal · São Paulo</p>
+        <h1>O Hambúrguer Artesanal que Vai Conquistar Seu Paladar</h1>
+        <p class="hero__text">Ingredientes selecionados, carne 100% bovina, pão brioche e muito sabor em cada mordida.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#cardapio">🍔 Ver Cardápio</a>
+          <a class="btn btn--whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+        </div>
+        <div class="hero__stats" aria-label="Destaques da Burger House">
+          <div><strong>4.9★</strong><span>Avaliação</span></div>
+          <div><strong>+2K</strong><span>Pedidos</span></div>
+          <div><strong>35min</strong><span>Entrega</span></div>
+        </div>
+      </div>
+      <div class="hero__image reveal">
+        <img src="images/hero-burger.png" alt="Hambúrguer artesanal premium com cheddar em fundo escuro">
+        <div class="hero__badge"><span>Mais pedido</span><strong>Bacon Supreme</strong></div>
+      </div>
+    </section>
+
+    <section class="section menu" id="cardapio">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Nosso Cardápio</p>
+        <h2>Escolha o seu favorito</h2>
+        <p>Hambúrgueres artesanais feitos com ingredientes frescos e muito amor pela gastronomia.</p>
+      </div>
+      <div class="menu-tabs" id="menu-tabs" aria-label="Filtros do cardápio">
+        <button class="menu-tab active" type="button" data-filter="Todos"><span>✨</span> Todos</button>
+        <button class="menu-tab" type="button" data-filter="Lanches"><span>🍔</span> Lanches</button>
+        <button class="menu-tab" type="button" data-filter="Combos"><span>🔥</span> Combos</button>
+        <button class="menu-tab" type="button" data-filter="Acompanhamentos"><span>🍟</span> Acompanhamentos</button>
+        <button class="menu-tab" type="button" data-filter="Bebidas"><span>🥤</span> Bebidas</button>
+        <button class="menu-tab" type="button" data-filter="Sobremesas"><span>🍨</span> Sobremesas</button>
+      </div>
+      <div id="category-menu" class="category-menu"></div>
+    </section>
+
+    <section class="section combos" id="combos">
+      <div class="section-heading reveal"><p class="eyebrow">Promoções</p><h2>Combos Especiais</h2><p>Hambúrguer + batata + bebida por um preço irresistível. Aproveite!</p></div>
+      <div id="combo-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section features" id="diferenciais">
+      <div class="section-heading reveal"><p class="eyebrow">Por que nos escolher</p><h2>Nossos Diferenciais</h2></div>
+      <div class="features-grid">
+        <article class="feature reveal"><span>01</span><h3>Carne Fresca</h3><p>100% bovina moída diariamente, sem conservantes.</p></article>
+        <article class="feature reveal"><span>02</span><h3>Ingredientes Premium</h3><p>Selecionados com rigoroso controle de qualidade.</p></article>
+        <article class="feature reveal"><span>03</span><h3>Entrega Rápida</h3><p>Pedido na sua porta em até 35 minutos.</p></article>
+        <article class="feature reveal"><span>04</span><h3>Atendimento WhatsApp</h3><p>Suporte rápido e pedidos direto pelo WhatsApp.</p></article>
+        <article class="feature reveal"><span>05</span><h3>Pix e Cartão</h3><p>Pagamento facilitado: Pix, crédito e débito.</p></article>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="avaliacoes">
+      <div class="section-heading reveal"><p class="eyebrow">Avaliações</p><h2>O que nossos clientes dizem</h2><p>4.9 / 5.0 · 2.143 avaliações</p></div>
+      <div class="testimonials-grid">
+        <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"Melhor hambúrguer da cidade! A carne é incrível e o pão brioche é perfeito."</p><strong>Mariana Costa</strong><span>Há 2 dias</span></article>
+        <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"O Bacon Supreme é uma experiência única. Bacon crocante, cheddar derretido... sensacional."</p><strong>Rafael Oliveira</strong><span>Há 5 dias</span></article>
+        <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"Atendimento excelente via WhatsApp. Pedido chegou quentinho e muito bem embalado."</p><strong>Juliana Mendes</strong><span>Há 1 semana</span></article>
+        <article class="testimonial reveal"><div class="stars">★★★★★</div><p>"O Double Smash é absurdo de bom. Duas carnes, dois queijos, molho especial... vale cada centavo."</p><strong>Carlos Souza</strong><span>Há 1 semana</span></article>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeria">
+      <div class="section-heading reveal"><p class="eyebrow">Galeria</p><h2>Desperte o seu apetite</h2></div>
+      <div class="gallery-grid">
+        <figure class="gallery-grid__large reveal"><img src="images/hero-burger.png" alt="Hambúrguer artesanal"><figcaption>Hambúrguer artesanal</figcaption></figure>
+        <figure class="reveal"><img src="images/gallery-grill.svg" alt="Batata frita crocante"><figcaption>Batata frita crocante</figcaption></figure>
+        <figure class="reveal"><img src="images/gallery-restaurant.svg" alt="Milkshake"><figcaption>Milkshake</figcaption></figure>
+        <figure class="reveal"><img src="images/burger-classic.svg" alt="Cheeseburger"><figcaption>Cheeseburger</figcaption></figure>
+        <figure class="reveal"><img src="images/combo-house.svg" alt="Batatas e ketchup"><figcaption>Batatas e ketchup</figcaption></figure>
+        <figure class="reveal"><img src="images/burger-bacon.svg" alt="Hambúrguer gourmet"><figcaption>Hambúrguer gourmet</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section location" id="localizacao">
+      <div class="location__content reveal">
+        <p class="eyebrow">Onde estamos</p><h2>Localização</h2>
+        <address>Rua das Flores, 1234 — Bairro Jardins<br>São Paulo – SP, CEP 01403-000</address>
+        <div class="hours"><strong>Horários</strong><span>Seg – Qui 18h – 23h</span><span>Sex – Sáb 17h – 00h</span><span>Domingo 17h – 22h</span></div>
+        <div class="hours"><strong>Telefone</strong><a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">(11) 99999-9999</a></div>
+        <a class="btn btn--whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+      </div>
+      <div class="map-card reveal"><div class="map-card__pin"></div><strong>Av. Paulista</strong><span>São Paulo, SP</span><a href="https://maps.google.com/?q=Av+Paulista+Sao+Paulo" target="_blank" rel="noopener">Como chegar</a></div>
+    </section>
+
+    <section class="section cta-final">
+      <p class="eyebrow">Pronto para pedir?</p>
+      <h2>Bora pedir agora?</h2>
+      <p>Clique abaixo e faça seu pedido diretamente pelo WhatsApp em segundos.</p>
+      <a class="btn btn--whatsapp" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><a class="brand" href="#inicio"><span class="brand__mark">BH</span><span class="brand__text">BurgerHouse</span></a><p>Hambúrgueres artesanais feitos com ingredientes selecionados e muito amor. A melhor experiência em cada mordida.</p></div>
+    <div class="footer__links"><strong>Menu</strong><a href="#cardapio">Cardápio</a><a href="#combos">Combos</a><a href="#diferenciais">Diferenciais</a><a href="#avaliacoes">Avaliações</a><a href="#localizacao">Localização</a></div>
+    <div class="footer__links"><strong>Contato</strong><span>Rua das Flores, 1234 — Jardins, SP</span><a href="https://wa.me/5511999999999">(11) 99999-9999</a><a href="tel:+5511999999999">(11) 99999-9999</a><span>Seg–Qui: 18h–23h</span></div>
+    <div class="footer__links"><strong>Horários</strong><span>Segunda – Quinta 18h – 23h</span><span>Sexta – Sábado 17h – 00h</span><span>Domingo 17h – 22h</span><span>Aberto agora</span></div>
+    <p class="footer__copy">© 2026 Burger House. Todos os direitos reservados.</p>
+    <p class="footer__copy">Feito com amor e muito cheddar · São Paulo</p>
+  </footer>
+
+  <a class="floating-order" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">Fazer Pedido</a>
+  <button class="back-to-top" type="button" aria-label="Voltar ao topo">↑</button>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

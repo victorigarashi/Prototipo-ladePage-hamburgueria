@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel administrativo da Burger House com login JWT e gerenciamento via API.">
+  <title>Admin | Burger House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <section class="login-screen" id="login-screen">
+      <form class="login-card" id="login-form">
+        <a class="brand login-brand" href="index.html"><span class="brand__mark">BH</span><span class="brand__text">Burger House</span></a>
+        <div><p class="eyebrow">Acesso seguro</p><h1>Entrar</h1><p>Login validado pelo backend FastAPI com token JWT.</p></div>
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" autocomplete="username" required>
+        <label for="login-password">Senha</label>
+        <input id="login-password" type="password" autocomplete="current-password" required>
+        <p class="login-error" id="login-error"></p>
+        <button class="btn btn--whatsapp" type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <section class="dashboard-shell" id="dashboard-shell" hidden>
+      <aside class="admin-sidebar">
+        <a class="brand" href="index.html"><span class="brand__mark">BH</span><span class="brand__text">Burger House</span></a>
+        <nav class="admin-menu">
+          <button class="admin-menu__item active" type="button" data-panel="products">🍔 Produtos</button>
+          <button class="admin-menu__item" type="button" data-panel="categories">📂 Categorias</button>
+          <button class="admin-menu__item" type="button" data-panel="combos">🎁 Combos</button>
+          <button class="admin-menu__item" type="button" data-panel="promotions">🏷 Promoções</button>
+          <button class="admin-menu__item" type="button" data-panel="reports">📈 Relatórios</button>
+          <button class="admin-menu__item admin-menu__item--danger" type="button" id="logout-button">🚪 Sair</button>
+        </nav>
+      </aside>
+
+      <div class="admin-content">
+        <header class="admin-topbar">
+          <div><p class="eyebrow">Painel administrativo</p><h1 id="panel-title">Produtos</h1></div>
+          <div class="admin-topbar__actions"><a class="nav-link" href="index.html">Ver site</a></div>
+        </header>
+
+        <section class="admin-summary">
+          <div><strong id="total-products">0</strong><span>produtos</span></div>
+          <div><strong id="active-products">0</strong><span>ativos</span></div>
+          <div><strong id="soldout-products">0</strong><span>esgotados</span></div>
+          <div><strong id="total-combos">0</strong><span>combos</span></div>
+        </section>
+
+        <section class="admin-panel active" id="panel-products">
+          <div class="admin-layout">
+            <form class="admin-form" id="product-form">
+              <div class="admin-form__heading"><div><p class="eyebrow">Produto</p><h2 id="product-title">Novo produto</h2></div><button class="btn btn--ghost" id="cancel-product" type="button" hidden>Cancelar</button></div>
+              <input type="hidden" id="product-id">
+              <label for="product-name">Nome</label><input id="product-name" required>
+              <label for="product-category">Categoria</label><select id="product-category" required></select>
+              <label for="product-description">Descrição</label><textarea id="product-description" rows="4" required></textarea>
+              <label for="product-price">Preço</label><input id="product-price" type="number" min="0.01" step="0.01" required>
+              <label for="product-image">URL da imagem</label><input id="product-image" placeholder="images/burger-classic.svg">
+              <div class="admin-switches">
+                <label class="switch-row"><input id="product-active" type="checkbox" checked><span>Ativo</span></label>
+                <label class="switch-row"><input id="product-available" type="checkbox" checked><span>Disponível</span></label>
+              </div>
+              <button class="btn btn--whatsapp" type="submit">Salvar produto</button>
+            </form>
+            <div class="admin-list-panel"><div class="admin-list-panel__top"><div><p class="eyebrow">API</p><h2>Produtos</h2></div></div><div class="admin-list" id="product-list"></div></div>
+          </div>
+        </section>
+
+        <section class="admin-panel" id="panel-categories">
+          <div class="admin-layout">
+            <form class="admin-form" id="category-form">
+              <div class="admin-form__heading"><div><p class="eyebrow">Categoria</p><h2 id="category-title">Nova categoria</h2></div><button class="btn btn--ghost" id="cancel-category" type="button" hidden>Cancelar</button></div>
+              <input type="hidden" id="category-id">
+              <label for="category-name">Nome</label><input id="category-name" required>
+              <label for="category-slug">Slug</label><input id="category-slug" placeholder="opcional">
+              <label class="switch-row"><input id="category-active" type="checkbox" checked><span>Ativa</span></label>
+              <button class="btn btn--whatsapp" type="submit">Salvar categoria</button>
+            </form>
+            <div class="admin-list-panel"><div class="admin-list-panel__top"><div><p class="eyebrow">API</p><h2>Categorias</h2></div></div><div class="admin-list" id="category-list"></div></div>
+          </div>
+        </section>
+
+        <section class="admin-panel" id="panel-combos">
+          <div class="admin-layout">
+            <form class="admin-form" id="combo-form">
+              <div class="admin-form__heading"><div><p class="eyebrow">Combo</p><h2 id="combo-title">Novo combo</h2></div><button class="btn btn--ghost" id="cancel-combo" type="button" hidden>Cancelar</button></div>
+              <input type="hidden" id="combo-id">
+              <label for="combo-name">Nome</label><input id="combo-name" required>
+              <label for="combo-description">Descrição</label><textarea id="combo-description" rows="4" required></textarea>
+              <label for="combo-items">Itens, um por linha</label><textarea id="combo-items" rows="3"></textarea>
+              <label for="combo-price">Preço</label><input id="combo-price" type="number" min="0.01" step="0.01" required>
+              <label for="combo-image">URL da imagem</label><input id="combo-image" placeholder="images/combo-house.svg">
+              <div class="admin-switches">
+                <label class="switch-row"><input id="combo-active" type="checkbox" checked><span>Ativo</span></label>
+                <label class="switch-row"><input id="combo-available" type="checkbox" checked><span>Disponível</span></label>
+              </div>
+              <button class="btn btn--whatsapp" type="submit">Salvar combo</button>
+            </form>
+            <div class="admin-list-panel"><div class="admin-list-panel__top"><div><p class="eyebrow">API</p><h2>Combos</h2></div></div><div class="admin-list" id="combo-list"></div></div>
+          </div>
+        </section>
+
+        <section class="admin-panel" id="panel-promotions">
+          <div class="admin-layout">
+            <form class="admin-form" id="promotion-form">
+              <div class="admin-form__heading"><div><p class="eyebrow">Promoção</p><h2 id="promotion-title">Nova promoção</h2></div><button class="btn btn--ghost" id="cancel-promotion" type="button" hidden>Cancelar</button></div>
+              <input type="hidden" id="promotion-id">
+              <label for="promotion-title-input">Título</label><input id="promotion-title-input" required>
+              <label for="promotion-description">Descrição</label><textarea id="promotion-description" rows="4" required></textarea>
+              <label for="promotion-code">Cupom</label><input id="promotion-code">
+              <label for="promotion-discount">Desconto</label><input id="promotion-discount">
+              <label class="switch-row"><input id="promotion-active" type="checkbox" checked><span>Ativa</span></label>
+              <button class="btn btn--whatsapp" type="submit">Salvar promoção</button>
+            </form>
+            <div class="admin-list-panel"><div class="admin-list-panel__top"><div><p class="eyebrow">API</p><h2>Promoções</h2></div></div><div class="admin-list" id="promotion-list"></div></div>
+          </div>
+        </section>
+
+        <section class="admin-panel" id="panel-reports">
+          <div class="report-grid">
+            <article class="feature"><span>🍔</span><h3 id="report-products">0 produtos</h3><p>Vindos da API administrativa.</p></article>
+            <article class="feature"><span>🎁</span><h3 id="report-combos">0 combos</h3><p>Combos cadastrados no backend.</p></article>
+            <article class="feature"><span>🏷</span><h3 id="report-promotions">0 promoções</h3><p>Promoções cadastradas no backend.</p></article>
+            <article class="feature"><span>⚠</span><h3 id="report-soldout">0 esgotados</h3><p>Itens indisponíveis.</p></article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div class="admin-toast" id="admin-toast" role="status"></div>
+  <script src="js/config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

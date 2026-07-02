@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Hambúrguer com bacon crocante">
+  <defs>
+    <linearGradient id="bun2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd06a"/><stop offset="1" stop-color="#a95b1c"/></linearGradient>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1a1a"/><stop offset="1" stop-color="#0c0c0c"/></linearGradient>
+    <filter id="shadow2"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#000" flood-opacity=".48"/></filter>
+  </defs>
+  <rect width="720" height="520" rx="34" fill="url(#bg2)"/>
+  <path d="M72 78h180v34H72zM480 404h170v34H480z" fill="#f5b301" opacity=".12"/>
+  <g filter="url(#shadow2)">
+    <path d="M126 235c21-92 108-143 233-143 132 0 217 56 235 143H126Z" fill="url(#bun2)"/>
+    <path d="M128 271h462v55H128z" fill="#e5361d"/>
+    <path d="M151 269c35 22 70 22 105 0s69-22 102 0 67 22 101 0 69-22 108 0" fill="none" stroke="#ffb07e" stroke-width="13" opacity=".7"/>
+    <path d="M104 317h513c18 0 32 15 32 33s-14 33-32 33H104c-18 0-32-15-32-33s14-33 32-33Z" fill="#35130b"/>
+    <path d="M154 297h407l-48 41H202l-48-41Z" fill="#f5b301"/>
+    <path d="M151 382h418c-10 40-49 64-98 64H248c-50 0-86-24-97-64Z" fill="url(#bun2)"/>
+    <circle cx="248" cy="140" r="5" fill="#fff3bd"/><circle cx="350" cy="127" r="5" fill="#fff3bd"/><circle cx="459" cy="151" r="5" fill="#fff3bd"/>
+  </g>
+</svg>
