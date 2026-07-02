@@ -34,6 +34,7 @@ burger-house/
 │   │   ├── schemas/
 │   │   └── services/
 │   ├── requirements.txt
+│   ├── runtime.txt
 │   └── .env.example
 └── frontend/
     ├── index.html
@@ -43,6 +44,37 @@ burger-house/
     ├── js/app.js
     ├── js/admin.js
     └── images/
+```
+
+## Versão do Python
+
+O backend está fixado para Python 3.11.9 no arquivo:
+
+```text
+backend/runtime.txt
+```
+
+Conteúdo obrigatório:
+
+```text
+python-3.11.9
+```
+
+Esse arquivo é importante no Render porque evita que o serviço use Python 3.14.x. O Python 3.14 ainda pode quebrar a instalação de dependências com binários nativos, especialmente `pydantic-core`, resultando em erro de `metadata-generation-failed`.
+
+As dependências em `backend/requirements.txt` foram mantidas em versões compatíveis com Python 3.11:
+
+```text
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+SQLAlchemy==2.0.36
+psycopg2-binary==2.9.10
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.20
+email-validator==2.2.0
 ```
 
 ## Rodar Localmente
@@ -166,9 +198,19 @@ Configuração esperada do serviço web:
 
 ```text
 Root Directory: backend
+Runtime: Python
+Python Version: python-3.11.9 via backend/runtime.txt
 Build Command: pip install -r requirements.txt
 Start Command: uvicorn app.main:app --host 0.0.0.0 --port $PORT
 ```
+
+Se o Render mostrar Python 3.14.x nos logs de build, confira:
+
+```text
+backend/runtime.txt
+```
+
+O arquivo precisa estar dentro da pasta `backend/`, porque o serviço usa `Root Directory: backend`.
 
 Variáveis de ambiente no Render:
 
