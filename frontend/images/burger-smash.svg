@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Smash burger com cheddar">
+  <defs>
+    <linearGradient id="bun3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8c252"/><stop offset="1" stop-color="#a86622"/></linearGradient>
+    <filter id="shadow3"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="720" height="520" rx="34" fill="#121212"/>
+  <circle cx="136" cy="102" r="96" fill="#f5b301" opacity=".1"/>
+  <circle cx="580" cy="412" r="138" fill="#25d366" opacity=".06"/>
+  <g filter="url(#shadow3)">
+    <path d="M139 219c17-78 100-126 221-126 125 0 205 46 221 126H139Z" fill="url(#bun3)"/>
+    <path d="M130 262h455l-54 55H183l-53-55Z" fill="#f5b301"/>
+    <path d="M104 305c48-25 101-20 159-8 61 12 119 14 174-4 60-19 115-14 171 16 20 11 29 35 18 55-7 14-22 22-38 22H113c-24 0-41-23-34-46 4-15 12-27 25-35Z" fill="#42160b"/>
+    <path d="M155 379h410c-9 43-51 70-105 70H256c-53 0-92-27-101-70Z" fill="url(#bun3)"/>
+    <path d="M197 327c87 24 188 27 316-4" stroke="#7b2e18" stroke-width="13" stroke-linecap="round" opacity=".65"/>
+    <ellipse cx="284" cy="137" rx="10" ry="4" fill="#fff4bc"/><ellipse cx="400" cy="125" rx="11" ry="4" fill="#fff4bc"/>
+  </g>
+</svg>

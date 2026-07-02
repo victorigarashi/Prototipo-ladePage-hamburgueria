@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Hambúrguer na chapa">
+  <rect width="720" height="520" rx="28" fill="#111"/>
+  <path d="M0 360h720v160H0z" fill="#1f1f1f"/>
+  <path d="M118 258c47-44 135-70 242-70s195 26 242 70c22 21 12 58-18 65-144 34-304 34-448 0-30-7-40-44-18-65Z" fill="#5b2112"/>
+  <path d="M105 260c55 25 104 26 147 3 43-23 86-23 129 0s88 23 136 0 92-21 134 3" stroke="#f5b301" stroke-width="16" opacity=".75" fill="none"/>
+  <path d="M92 360h536" stroke="#575757" stroke-width="12" stroke-linecap="round"/>
+  <path d="M135 404h450" stroke="#373737" stroke-width="9" stroke-linecap="round"/>
+  <g stroke="#f5b301" stroke-width="8" opacity=".35"><path d="M225 155c-31-35 20-57-6-90"/><path d="M359 139c-28-35 26-56-3-91"/><path d="M492 161c-27-32 17-51-4-83"/></g>
+</svg>
