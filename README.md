@@ -230,6 +230,9 @@ ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 FRONTEND_URL=https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO
 GITHUB_PAGES_URL=https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO
+ADMIN_NAME=Victor Igarashi
+ADMIN_EMAIL=igarashivictor0@gmail.com
+ADMIN_PASSWORD=sua_senha_admin
 ```
 
 O backend já corrige automaticamente `postgres://` para `postgresql://`, caso o Render entregue a URL nesse formato.
@@ -249,6 +252,20 @@ Depois do primeiro deploy:
 1. Abra o serviço `burger-house-api` no Render.
 2. Entre em `Shell`.
 3. Rode:
+
+```bash
+python -m app.seed
+```
+
+Se você configurou `ADMIN_EMAIL`, `ADMIN_PASSWORD` e `ADMIN_NAME`, o seed cria ou atualiza esse admin automaticamente. Para sua conta, configure no Render:
+
+```text
+ADMIN_NAME=Victor Igarashi
+ADMIN_EMAIL=igarashivictor0@gmail.com
+ADMIN_PASSWORD=sua_senha_admin
+```
+
+Depois rode novamente:
 
 ```bash
 python -m app.seed

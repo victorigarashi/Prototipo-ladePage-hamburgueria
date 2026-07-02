@@ -1,3 +1,4 @@
+import os
 from decimal import Decimal
 
 from sqlalchemy.orm import Session
@@ -60,14 +61,37 @@ def upsert_promotion(db: Session, **data) -> Promotion:
     return promotion
 
 
+def upsert_admin_user(db: Session, name: str, email: str, password: str) -> User:
+    user = db.query(User).filter(User.email == email).first()
+    if user:
+        user.name = name
+        user.password_hash = hash_password(password)
+        user.is_admin = True
+        return user
+
+    user = User(
+        name=name,
+        email=email,
+        password_hash=hash_password(password),
+        is_admin=True,
+    )
+    db.add(user)
+    return user
+
+
 def seed(db: Session):
-    if not db.query(User).filter(User.email == "gerente@burgerhouse.com.br").first():
-        db.add(User(
-            name="Gerente Burger House",
-            email="gerente@burgerhouse.com.br",
-            password_hash=hash_password("Burger@123"),
-            is_admin=True,
-        ))
+    upsert_admin_user(
+        db,
+        name="Gerente Burger House",
+        email="gerente@burgerhouse.com.br",
+        password="Burger@123",
+    )
+
+    admin_email = os.getenv("ADMIN_EMAIL")
+    admin_password = os.getenv("ADMIN_PASSWORD")
+    admin_name = os.getenv("ADMIN_NAME", "Administrador Burger House")
+    if admin_email and admin_password:
+        upsert_admin_user(db, name=admin_name, email=admin_email, password=admin_password)
 
     categories = {
         "lanches": upsert_category(db, "Lanches", "lanches"),
