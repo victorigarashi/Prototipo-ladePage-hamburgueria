@@ -247,11 +247,17 @@ E confirme se a variável `PYTHON_VERSION` está cadastrada no serviço web, nã
 
 ## Rodar Seed no Render
 
-Depois do primeiro deploy:
+O backend roda o seed automaticamente no startup. Então, depois de configurar as variáveis `ADMIN_EMAIL`, `ADMIN_PASSWORD` e `ADMIN_NAME`, basta fazer um novo deploy.
+
+Fluxo recomendado:
 
 1. Abra o serviço `burger-house-api` no Render.
-2. Entre em `Shell`.
-3. Rode:
+2. Vá em `Environment`.
+3. Configure `ADMIN_EMAIL`, `ADMIN_PASSWORD` e `ADMIN_NAME`.
+4. Faça `Manual Deploy`.
+5. A API vai criar tabelas, produtos de teste e o admin automaticamente.
+
+Se você tiver acesso ao Shell e quiser rodar manualmente, também pode usar:
 
 ```bash
 python -m app.seed
@@ -265,7 +271,7 @@ ADMIN_EMAIL=igarashivictor0@gmail.com
 ADMIN_PASSWORD=sua_senha_admin
 ```
 
-Depois rode novamente:
+Depois faça um novo deploy ou rode manualmente:
 
 ```bash
 python -m app.seed
