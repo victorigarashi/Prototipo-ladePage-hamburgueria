@@ -48,19 +48,27 @@ burger-house/
 
 ## Versão do Python
 
-O backend está fixado para Python 3.11.9 no arquivo:
+O backend está fixado para Python 3.11.9 nos arquivos:
 
 ```text
+./.python-version
+backend/.python-version
 backend/runtime.txt
 ```
 
-Conteúdo obrigatório:
+Conteúdo obrigatório de `.python-version`:
+
+```text
+3.11.9
+```
+
+Conteúdo obrigatório de `backend/runtime.txt`:
 
 ```text
 python-3.11.9
 ```
 
-Esse arquivo é importante no Render porque evita que o serviço use Python 3.14.x. O Python 3.14 ainda pode quebrar a instalação de dependências com binários nativos, especialmente `pydantic-core`, resultando em erro de `metadata-generation-failed`.
+Esses arquivos são importantes no Render porque evitam que o serviço use Python 3.14.x. O Python 3.14 ainda pode quebrar a instalação de dependências com binários nativos, especialmente `pydantic-core`, resultando em erro de `metadata-generation-failed`.
 
 As dependências em `backend/requirements.txt` foram mantidas em versões compatíveis com Python 3.11:
 
@@ -216,6 +224,7 @@ Variáveis de ambiente no Render:
 
 ```text
 DATABASE_URL=gerada pelo banco PostgreSQL do Render
+PYTHON_VERSION=3.11.9
 SECRET_KEY=crie_uma_chave_grande_e_segura
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=60
@@ -224,6 +233,14 @@ GITHUB_PAGES_URL=https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO
 ```
 
 O backend já corrige automaticamente `postgres://` para `postgresql://`, caso o Render entregue a URL nesse formato.
+
+Se o deploy continuar mostrando Python 3.14.x nos logs, faça:
+
+```text
+Manual Deploy > Clear build cache & deploy
+```
+
+E confirme se a variável `PYTHON_VERSION` está cadastrada no serviço web, não apenas no banco.
 
 ## Rodar Seed no Render
 
